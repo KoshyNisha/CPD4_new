@@ -1,0 +1,257 @@
+/* Style body and ensure positioning is adjustable for mobile view */
+body {
+    font-family: 'Arial', sans-serif;
+    color: #FEFFFF;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    background-color:#194D4B;
+}
+
+html{
+    margin:15px;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+/* change background and text color if dark mode */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #091f1e;
+        color: white;
+    }
+    *{
+        color:white;
+    }
+}
+
+/* align header and set font size */
+header{
+    font-size: 20px;
+    text-align: center;
+    padding:50px;
+}
+
+/* style nav bar */
+nav ul li{
+    padding: 5px;
+}
+
+/* remove bullet points from nav bar to achieve clean look */
+ul { 
+    list-style-type: none; 
+}
+
+/* style nav bar links and add animation */
+nav ul li a {
+    text-transform:uppercase;
+    font-weight: bold;
+    color: #DEF2F1;
+    padding: 10px;
+    transition: 0.3s;
+}
+
+/* provide styling for focus state to improve accessibility  */
+ul a:focus{
+    color: #48e288;
+}   
+ 
+/* change color of links so that they stand out */
+header h1 a, body a{
+    color:#48e288;
+}
+/* 
+increase readabilty for users who need large font */
+nav{
+   font-size: large; 
+}
+/* 
+style h2 headers for easy readability */
+h2{
+    text-align: center;
+    text-transform: uppercase;
+    background-color: #417a78;
+    position: sticky;
+    top:0;
+    animation: pulse 1s linear both;
+    background-color: rgb(6, 48, 49);
+}
+
+/* style summary text */
+.summary p {
+    background-color: rgb(6, 48, 49);
+    padding-bottom:5px;
+    margin-bottom: 20px;
+}
+
+/* style athlete names within summary class */
+.summary .athlete{
+    color:#48e288
+}
+
+/* style table to have dark background and no lines within table cells */
+table{
+    width:100%;
+    background-color: rgb(6, 48, 49);
+    padding-bottom:5px;
+    margin-bottom: 20px;
+    border-collapse: collapse;
+}
+
+/* style odd rows in table to have darker background for better readability */
+tr:nth-child(odd){
+    background-color: #051414;
+}
+
+/* style column headers in table for better readability */
+tr:first-child{
+    text-transform: uppercase;
+}
+
+/* set table font size */
+tbody{
+    font-size: 20px;
+}
+
+#individual-results{
+    display:grid;
+    grid-template-columns: 25% 25% 25%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* style athlete boxes */
+#individual-results .athlete{
+    background-color:rgb(6, 48, 49);
+    padding:5px;
+    margin:5px;
+    border:solid 2px #051414;
+    text-align: center;
+    font-size:20px;
+}
+
+/* style athlete stats */
+.athlete details p{
+    color:#48e288;
+}
+
+/* style athlete profile images */
+.athlete img{
+    width: 100%;
+    padding:10px;
+}
+
+/* implement hover style */
+figure:hover{
+    border:solid white 1px;
+}
+
+/* style figcaption which is athletes' names to appear visible and emphasized */
+.athlete figcaption{
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.athlete details{
+    font-size: 25px;
+}
+
+/* style footer */
+footer{
+    color:#DEF2F1;
+    text-align:center;
+}
+
+/* ensure footer links are differentiated from the rest of footer */
+footer a {
+    color:#48e288;
+}
+
+/* transition for header background color */
+@keyframes colorTransition {
+    0%   {background-color:rgb(6, 48, 49); left:0px; top:0px;}
+    50%  {background-color:#1d5555; left:200px; top:0px;}
+    100%  {background-color:#051414; left:200px; top:200px;}
+}
+
+/*  transition to emphasize h2 headers */
+@keyframes pulse {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+    }
+
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+    }
+
+    75% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    }
+
+    80% {
+        transform: scale(0.9);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    }
+}
+
+/* ensure users with prefers-reduced-motion do not view intense animations but still see some animation*/
+@media (prefers-reduced-motion: reduce) {
+    @keyframes colorTransition {
+        0%   {color:#48e288;}
+        50%  {color:#95e4b6;}
+        100%  {color:#DEF2F1;}
+    }
+
+    @keyframes pulse {
+
+        0% {
+            transform: scale(0.98);
+            box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+        }
+    
+        70% {
+            transform: scale(1);
+            box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+        }
+    }
+}
+
+
+/* ensure users with prefers-reduced-motion do not view intense animations but still see some animation*/
+header h1 a{
+    animation-name: colorTransition;
+    animation-duration: 2s;
+}
+
+/* set images size in gallery */
+#gallery img{
+    size:50%;
+}
+
+/*adjusts for color contrast */
+@media (prefers-contrast: more) {
+    body {
+        color: white;
+    }
+    *{
+        color:white;
+    }
+}
+
+body {
+    color: white;
+}
+*{
+    color:white;
+}
