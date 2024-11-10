@@ -273,6 +273,10 @@ header h1 a{
   user-select: none;
 }
 
+.prev:focus, .next:focus {
+    background-color: #48e288; /* Visible focus indicator */
+  }
+
 /* Position the "next button" to the right */
 .next {
   right: 0;
